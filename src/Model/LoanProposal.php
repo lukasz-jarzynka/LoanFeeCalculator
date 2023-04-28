@@ -12,6 +12,9 @@ class LoanProposal
 {
     private float $amount;
 
+    /**
+     * @param float $amount
+     */
     public function __construct(float $amount)
     {
         $this->amount = $amount;
@@ -19,8 +22,9 @@ class LoanProposal
 
     /**
      * Amount requested for this loan application.
+     * @return float
      */
-    public function amount(): float
+    public function getAmount(): float
     {
         return $this->amount;
     }
