@@ -1,13 +1,8 @@
-PragmaGO.TECH Interview Test - Fee Calculation
+Loan Fee Calculator
 =====
+This project provides a simple yet effective solution for calculating loan fees based on the amount of the loan. The calculator uses an interpolation strategy for determining the fee from a pre-defined fee structure and applies a rounding strategy to adjust the fee to a specified multiple.
 
-## Background
-
-This test is designed to evaluate your problem solving approach and your engineering ability. Design your solution in a way that shows your knowledge of OOP concepts, SOLID principles, design patterns, clean and extensible architecture.
-
-Provide a test suite verifying your solution, use any testing framework you feel comfortable with. Use any libraries (or none) you feel add value to your solution. Treat the packaged project as a template; if you feel that your solution can be improved with modifications to it then please go ahead.
-
-## The test
+## Assumptions of the task
 
 The requirement is to build a fee calculator that - given a monetary **amount** - will produce an appropriate fee for a loan, based on a fee structure and a set of rules described below. A general contract for this functionality is defined in the interface `FeeCalculator`.
 
@@ -24,27 +19,6 @@ Example inputs/outputs:
 |-------------|--------|
 |6500 PLN     |130 PLN |
 |19,250 PLN   |385 PLN |
-
-# Installation
-A database or any other external dependency is not required for this test.
-
-```bash
-composer install
-```
-
-# Example
-
-```php
-<?php
-
-use PragmaGoTech\Interview\Model\LoanProposal;
-
-$calculator = new FeeCalculator();
-
-$application = new LoanProposal(2750);
-$fee = $calculator->calculate($application);
-// $fee = (float) 90.0
-```
 
 # Fee Structure
 The fee structure doesn't follow particular algorithm and it is possible that same fee will be applicable for different amounts.
@@ -70,4 +44,28 @@ The fee structure doesn't follow particular algorithm and it is possible that sa
 18000 PLN: 360 PLN
 19000 PLN: 380 PLN
 20000 PLN: 400 PLN
+```
+
+# Features
+- Customizable fee structure: Define your own fee structure for different loan amount ranges.
+- Interpolation strategy: Calculate the loan fee based on linear interpolation within the fee structure.
+- Rounding strategy: Apply a rounding strategy to adjust the final fee. The default strategy rounds the fee up to the nearest multiple of 5.
+- Test-driven development: PHPUnit tests are provided to ensure the correctness of the fee calculation and rounding logic.
+
+# Usage
+1. Clone the repository and navigate to the project directory.
+2. Install dependencies using Composer:
+```
+composer install
+```
+
+3. Run the example script to see the loan fee calculator in action:
+```
+php example.php
+```
+
+4. Modify the fee structure, interpolation, and rounding strategies as needed in the source code.
+5. Run the tests to ensure everything is working correctly:
+```
+./vendor/bin/phpunit tests
 ```

@@ -1,10 +1,10 @@
 {
-    "name": "pragmagotech/interview",
+    "name": "app/project",
     "type": "project",
     "authors": [
         {
-            "name": "Piotr Ścibor",
-            "email": "piotr.scibor@pragmago.tech"
+            "name": "Łukasz Jarzynka",
+            "email": "lukasz.jarzynka.90@gmail.com"
         }
     ],
     "require-dev": {
@@ -12,12 +12,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PragmaGoTech\\Interview\\": "src/"
+            "App\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "YourNamespace\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/"
         }
     }
 }

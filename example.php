@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 require_once 'vendor/autoload.php';
 
-use PragmaGoTech\Interview\Model\FeeCalculator;
-use PragmaGoTech\Interview\Model\FeeInterpolator;
-use PragmaGoTech\Interview\Model\LoanProposal;
-use PragmaGoTech\Interview\Model\MultipleOfFiveRounding;
+use App\Fee\FeeCalculator;
+use App\Fee\FeeInterpolator;
+use App\Loan\LoanProposal;
+use App\Rounding\MultipleOfFiveRounding;
 
 $interpolator = new FeeInterpolator();
 $roundingStrategy = new MultipleOfFiveRounding();
